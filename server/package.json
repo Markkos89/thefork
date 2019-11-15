@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "API for theFork project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Markkos89/thefork.git"
+  },
+  "author": "Marcos Iglesias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Markkos89/thefork/issues"
+  },
+  "homepage": "https://github.com/Markkos89/thefork#readme"
+}
