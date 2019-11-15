@@ -14,11 +14,11 @@ app.get('/', (req, res) => {
     res.send(`Hello TheFork! I'm coming!!`)
 })
 
-app.get('/restaurants', (req, res) => {
+app.get('/api', (req, res) => {
     let rawdata = fs.readFileSync('data.json');
-    let restaurants = JSON.parse(rawdata);
-    console.log(restaurants);
-    res.send(restaurants)
+    let data = JSON.parse(rawdata);
+    console.log(data);
+    res.send("Everything works fine. There are " + data.restaurants.length + " restaurants!")
 })
 
 
