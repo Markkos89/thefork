@@ -1,33 +1,38 @@
-import React from 'react'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import React from 'react';
+import {
+    Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button, Container, Row, Col
+} from 'reactstrap';
+// import { FiMessageCircle } from 'react-icons/FiMessageCircle';
 
 const OneCard = ({ resto }) => {
     return (
-        <Card border="light" style={{ width: '18rem' }}>
-            <Card.Body>
-                <Container>
+        <div>
+            <Container>
+                <Card>
                     <Row>
-                        <Col><Card.Img variant="top" src={`${resto.image_url}`} /></Col>
+                        <Col xs={{ size: 'auto', offset: 1 }}><CardImg style={{ width: "318px", height: "180px" }} src={`${resto.image_url}`} alt="Card image cap" /></Col>
                         <Col>
-                            <Card.Text>{resto.cuisine}</Card.Text>
-                            <Card.Title>{resto.name}</Card.Title>
-                            <Card.Text>{resto.address}</Card.Text>
-                            <Card.Text>Precio promedio {resto.average_ticket}</Card.Text>
-                            <Card.Text>{resto.takes_yums}</Card.Text>
-                            <Card.Text>{resto.rating}</Card.Text>
-                            <Card.Text>{resto.reviews}</Card.Text>
-                            <Button variant="primary">RESERVAR - HASTA -%{resto.best_discount}</Button>
+                            <CardBody>
+                                <CardSubtitle>{resto.cuisine}</CardSubtitle>
+                                <CardTitle>{resto.name}</CardTitle>
+                                <CardText>{resto.address}</CardText>
+                                <CardText>Precio promedio $ {resto.average_ticket}</CardText>
+                                <CardText>{resto.takes_yums}</CardText>
+
+                                <Button variant="success">RESERVAR - HASTA -%{resto.best_discount}</Button>
+                            </CardBody>
                         </Col>
-                        <Col></Col>
+                        <Col>
+                            <CardText>{resto.rating}</CardText>
+                            <CardText>{resto.reviews}</CardText>
+                        </Col>
                     </Row>
-                </Container>
-            </Card.Body>
-        </Card>
-    )
-}
+                </Card>
+            </Container>
+        </div>
+    );
+};
 
 export default OneCard
+
