@@ -1,9 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import useForm from 'react-hook-form'
+import axios from 'axios'
 
 export default function App() {
   const { register, handleSubmit } = useForm()
-  const onSubmit = data => console.log(data)
+  const [sabarnole, setSabarnole] = useState({})
+  const onSubmit = data => {
+    console.log(data)
+    async function fetchData() {
+      try {
+        const response = await axios.get(`/api/search?sort_by=${data.sort_by}&coor_x=${data.coor_x}&coor_y=${data.coor_y}&max_results=${data.max_results}`);
+        console.log(response);
+        setSabarnole(response)
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
+  }
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await axios.get('/api');
+        console.log(response);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
+  }, [])
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
