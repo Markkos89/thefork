@@ -21,6 +21,8 @@
     "cors": "^2.8.5",
     "euclidean-distance": "^1.0.0",
     "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "mathjs": "^6.2.3",
     "mongoose": "^5.7.11",
     "nodemon": "^1.19.4",
     "path": "^0.12.7"
