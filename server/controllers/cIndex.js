@@ -1,5 +1,4 @@
-
-const helpers = require('./helpers/index')
+const helpers = require('./helpers/getRestaurantsFromDataJson')
 
 exports.getApi = async (req, res) => {
     const restaurants = await helpers.getRestaurantsFromDataJson()
