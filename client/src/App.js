@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import FormContainer from './containers/FormContainer'
 import Cards from './components/Cards'
+import ShowTitle from './components/ShowTitle'
 
 export default function App() {
   const [restaurants, setRestaurants] = useState([])
@@ -20,7 +21,8 @@ export default function App() {
 
   return (
     <>
-      <FormContainer setRestaurants={setRestaurants} />
+      {restaurants.length === 0 && <FormContainer setRestaurants={setRestaurants} />}
+      {restaurants.length > 0 && <ShowTitle count={restaurants.length} />}
       {restaurants.length > 0 && <Cards restaurants={restaurants} />}
     </>
   );

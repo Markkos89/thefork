@@ -4,9 +4,10 @@ import axios from 'axios'
 import FormComponent from '../components/FormComponent'
 
 const FormContainer = ({ setRestaurants }) => {
-    const { register, handleSubmit, errors } = useForm()
+    const { register, handleSubmit } = useForm()
 
     const onSubmit = data => {
+        console.log({ data })
         const fetchData = async () => {
             try {
                 const response = await axios.get(`/api/search?sort_by=${data.sort_by}&coor_x=${data.coor_x}&coor_y=${data.coor_y}&max_results=${data.max_results}`);
@@ -21,7 +22,7 @@ const FormContainer = ({ setRestaurants }) => {
     }
 
     return (
-        <FormComponent handleSubmit={handleSubmit} onSubmit={onSubmit} register={register} errors={errors} />
+        <FormComponent handleSubmit={handleSubmit} onSubmit={onSubmit} register={register} />
     )
 }
 
