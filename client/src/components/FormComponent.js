@@ -17,7 +17,7 @@ function FormComponent({ handleSubmit, onSubmit, register }) {
                         </li>
                         <li>
                             <label htmlFor="max_results">Max Results</label>
-                            <input type="text" id="max_results" name="max_results" placeholder="Enter the number of max results here" ref={register} />
+                            <input type="text" id="max_results" name="max_results" placeholder="Ingrese la cantidad máxima de resultados" ref={register} />
                         </li>
                         <li>
                             <select name="sort_by" ref={register} className="form-control" style={{ width: "auto" }}>
